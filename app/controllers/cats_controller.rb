@@ -9,7 +9,7 @@ class CatsController < ApplicationController
     def show
         @cat = Cat.find_by(id: params[:id])
 
-        render json: @cat # replace with show view 
+        render :show
     end
 
     def new
