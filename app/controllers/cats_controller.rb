@@ -3,7 +3,7 @@ class CatsController < ApplicationController
     def index
         @cats = Cat.all
 
-        render json: @cats  # replace with index view
+        render :index
     end
 
     def show
