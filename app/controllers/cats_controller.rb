@@ -23,13 +23,11 @@ class CatsController < ApplicationController
         if @cat.save
             redirect_to cat_url(@cat)
         else
-            #replace with new view
-            render json: @cat.errors.full_messages, status: :unprocessable_entity
+            render :new
         end
 
     end
 
-    
     def edit
         @cat = Cat.find_by(id: params[:id])
         render :edit
@@ -42,7 +40,8 @@ class CatsController < ApplicationController
         if @cat.update
             redirect_to cat_url(@cat)
         else
-            render :edit
+            #replace with edit view
+            render json: @cat.errors.full_messages, status: :unprocessable_entity
         end
 
     end
