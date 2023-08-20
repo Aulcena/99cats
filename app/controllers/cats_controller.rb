@@ -37,11 +37,10 @@ class CatsController < ApplicationController
 
         @cat = Cat.find_by(id: params[:id])
 
-        if @cat.update
+        if @cat.update(cat_params)
             redirect_to cat_url(@cat)
         else
-            #replace with edit view
-            render json: @cat.errors.full_messages, status: :unprocessable_entity
+            render :edit
         end
 
     end
