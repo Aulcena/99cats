@@ -15,7 +15,7 @@
         <option selected disabled >--select a color--</option>
             <% Cat::CAT_COLORS.each do |color| %>
                 <option value="<%= color %>">
-                    <%= color %>
+                    <%= color.capitalize %>
                 </option>
             <% end %>
     </select>
